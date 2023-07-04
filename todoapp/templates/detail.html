@@ -1,0 +1,28 @@
+{% extends 'todoapp_base.html' %}
+{% load static %}
+{% block title %} {{ task.title }} {% endblock %}
+{% block content %}
+<form action="{% url 'todoapp:complete' task.task_id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Task: {{ task.title }}</legend>
+        <p><em>{{ task.description }}</em></p>
+        {% if task.complete %}
+            <input type="radio" name="complete" value="true" id="true" checked/>
+            <label for="true">Task Completed</label><br />
+            <input type="radio" name="complete" value="false" id="false" />
+            <label for="false">Task Not Completed</label><br />
+        {% else %}
+            <input type="radio" name="complete" value="true" id="true" />
+            <label for="true">Task Completed</label><br />
+            <input type="radio" name="complete" value="false" id="false" checked/>
+            <label for="false">Task Not Completed</label><br />
+        {% endif %}
+        <p class="remove-link">
+            <a href="{% url 'todoapp:update' task.task_id %}"><span class="todo-detail">Update</span></a>
+            <a href="{% url 'todoapp:delete' task.task_id %}"><span class="todo-detail">Delete</span></a>
+
+    </fieldset>
+    <input type="submit" value="Completed" />
+</form>
+{% endblock %}

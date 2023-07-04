@@ -1,0 +1,12 @@
+{% extends 'todoapp_base.html' %}
+{% load static %}
+
+{% block title %}To-Do List{% endblock %}
+
+{% block content %}
+    <div class="todolist">
+        <p>Welcome back, {{ user.first_name }}.</p>
+        <p>Would you like to <a href="{% url 'todoapp:add' %}">add a new task?</a></p>
+    </div>
+{% endblock %}
+```

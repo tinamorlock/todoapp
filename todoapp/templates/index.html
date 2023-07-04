@@ -1,0 +1,22 @@
+{% extends 'todoapp_base.html' %}
+{% load static %}
+
+
+{% block title %}To-Do List{% endblock %}
+
+{% block content %}
+    <div class="todolist">
+        <h1>Tasks</h1>
+        {% if task_list %}
+            <ul>
+            {% for task in task_list %}
+                <li>{{ task.title }}<a href="{% url 'todoapp:detail' task.task_id %}"><span class="todo-detail">View</span></a>
+                <a href="{% url 'todoapp:update' task.task_id %}"><span class="todo-detail">Update</span></a>
+                <a href="{% url 'todoapp:delete' task.task_id %}"><span class="todo-detail">Delete</span></a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tasks are available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

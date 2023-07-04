@@ -1,0 +1,119 @@
+:root {
+    --gold: #F4C044;
+    --orange: #E7622C;
+    --pink: #E9336F;
+    --purple: #7A3CE2;
+    --blue: #4E83F6;
+}
+
+body {
+    background-color: var(--gold);
+    color: var(--purple);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+h1 {
+    margin-top: 50px;
+    color: var(--blue);
+    font-family: 'Verdana', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    background-color: var(--purple);
+    margin-left: 0px;
+    border-radius: 5px;
+}
+
+.todolist {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    width: 65%;
+ }
+li {
+    margin-top: 25px;
+    }
+
+.todolist a{
+    color: pink;
+    text-decoration: none;
+}
+
+.todo-detail {
+    position: relative;
+    background-color: var(--blue);
+    color: var(--purple);
+    margin-left: 50px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.remove-link a {
+    color: var(--purple);
+    text-decoration: none;
+}
+
+legend {
+    background-color: var(--purple);
+    color: var(--gold);
+    padding: 5px;
+    border: 2px solid var(--orange);
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 5px solid var(--orange);
+    border-radius: 5px;
+    padding: 50px;
+    margin-top: 25px;
+    margin-left: 50px;
+    width: 750px;
+}
+
+input[type=submit] {
+    margin-left: 400px;
+    background-color: var(--orange);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 36px;
+    color: var(--purple);
+    border-radius: 5px;
+}
+
+#todo-topmenu {
+    margin-top: 50px;
+    background-color: var(--pink);
+    color: var(--gold);
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#todo-topmenu a {
+    color: var(--pink);
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#todo-footer {
+    background-color: var(--pink);
+    color: var(--gold);
+    padding: 1px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+}

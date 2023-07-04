@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'styles/todoapp.css' %}">
+    </head>
+    <body>
+    <div id="todo-topmenu">
+        <a href="{% url 'todoapp:index' %}">All Tasks</a>
+        <a href="{% url 'todoapp:add' %}">Add a Task</a>
+        <a href="{% url 'todoapp:signup' %}">Sign Up</a>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <div id="todo-footer">
+        <p>To-Do List // Built on Django Framework by Tina Morlock &copy; 2023</p>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'todoapp_base.html' %}
+{% load static %}
+{% block title %}Update a Task{% endblock %}
+{% block content %}
+    <div class="todolist">
+        <h1>Update a Task</h1>
+        <form action="{% url 'todoapp:update' task.task_id %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Update a Task</legend>
+                <p>
+                    <label for="title">Title:</label>
+                    <input type="text" name="title" id="title" value="{{ task.title }}" />
+                </p>
+                <p>
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description" rows="5" cols="50">
+                        {{ task.description }}
+                    </textarea>
+                </p>
+                <p>
+                    {% if task.complete %}
+            <input type="radio" name="complete" value="true" id="true" checked/>
+            <label for="true">Task Completed</label><br />
+            <input type="radio" name="complete" value="false" id="false" />
+            <label for="false">Task Not Completed</label><br />
+        {% else %}
+            <input type="radio" name="complete" value="true" id="true" />
+            <label for="true">Task Completed</label><br />
+            <input type="radio" name="complete" value="false" id="false" checked/>
+            <label for="false">Task Not Completed</label><br />
+        {% endif %}
+                </p>
+            </fieldset>
+            <input type="submit" value="Update" />
+        </form>
+    </div>
+{% endblock %}
